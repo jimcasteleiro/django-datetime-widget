@@ -219,9 +219,9 @@ class PickerWidgetMixin(object):
 
         super(PickerWidgetMixin, self).__init__(attrs, format=self.format)
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, **kwargs):
         final_attrs = self.build_attrs(attrs)
-        rendered_widget = super(PickerWidgetMixin, self).render(name, value, final_attrs)
+        rendered_widget = super(PickerWidgetMixin, self).render(name, value, final_attrs, **kwargs)
 
         #if not set, autoclose have to be true.
         self.options.setdefault('autoclose', True)
